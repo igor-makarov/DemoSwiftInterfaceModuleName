@@ -1,0 +1,4 @@
+#!/bin/bash
+xcodebuild -workspace DemoSwiftInterfaceModuleName.xcworkspace \
+  -scheme App \
+  -sdk iphonesimulator

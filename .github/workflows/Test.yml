@@ -1,0 +1,30 @@
+name: Test
+
+jobs:
+  specs:
+    strategy:
+      fail-fast: false
+
+    name: Test
+    runs-on: macos-10.15
+
+    steps:
+      - name: Checkout git
+        uses: actions/checkout@v1
+
+
+      - uses: maxim-lobanov/setup-xcode@v1.1
+        if: ${{ matrix.task == 'EXAMPLES' }}
+        with:
+          xcode-version: 13.1
+
+      - name: Run Tests
+        run: ./build_app
+
+on:
+  push:
+    branches:
+      - "*"
+  pull_request:
+    branches:
+      - "*"
