@@ -1,0 +1,6 @@
+framework module Library1 {
+  header "Library1-Swift.h"
+
+  export *
+  module Library1 { export * }
+}
